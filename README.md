@@ -7,7 +7,7 @@
 
 
 ## Project Plan:
-In this challenge, a [Company] of your choosing has approached you looking for a new web application!  
+In this challenge, a [Topic] of your choosing has approached you looking for a new web application!  
 The company can be an organization you like, a restaurant you visit frequently, or any other one on your mind.  
 
 The company asks for: 
