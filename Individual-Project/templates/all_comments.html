@@ -1,13 +1,59 @@
-<!doctype html>
-    <html>
-        <body>
-            <h1> Comment section!</h1>
-            <p> All the feedback you gave us: </p>
-            <ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            color: #666;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+
+        li {
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Optional: Add hover effect for the list items */
+        li:hover {
+            background-color: #f8f8f8;
+            transition: background-color 0.3s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Comment section!</h1>
+    <p>All the feedback you gave us:</p>
+    <ul>
         {% for comment in comments %}
-       <img src="{{comment}}" alt="" />
-       <li> {{comments[comment]['comments']}}</li>
-           {% endfor %}
-            </ul>
-        </body>
-    </html>
+        <li>{{ comments[comment]['comments'] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

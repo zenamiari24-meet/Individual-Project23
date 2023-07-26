@@ -110,6 +110,26 @@ def all_comments():
     comments=db.child("comments").get().val()
     return render_template("all_comments.html", comments=comments)
 
+def get_food_dishes():
+    dishes = [
+        {
+            "name": "Sushi",
+            "image_url": "https://australianavocados.com.au/wp-content/uploads/2021/05/AusAvo_Sushi.jpg"
+        },
+        {
+            "name": "Smashburger",
+            "image_url": "https://assets.epicurious.com/photos/5c745a108918ee7ab68daf79/1:1/w_2560%2Cc_limit/Smashburger-recipe-120219.jpg"
+        },
+        {
+            "name": "Vegan Dish",
+            "image_url": "https://images.everydayhealth.com/images/what-is-a-vegan-diet-benefits-food-list-beginners-guide-alt-1440x810.jpg?sfvrsn=1d260c85_1"
+        },
+        {
+            "name": "Healthy Bowl",
+            "image_url": "https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/09/healthy-eating-food-sweet-potato-kale-bowl-grain-vegan-1296x728-header.jpg?w=1155&h=1528"
+        }
+    ]
+    return jsonify(dishes)
 
  
 

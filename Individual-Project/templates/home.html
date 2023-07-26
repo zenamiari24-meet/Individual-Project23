@@ -8,7 +8,7 @@
     <style>
         body {
 
-            background-image: url('https://garden.spoonflower.com/c/13024923/p/f/m/_LnQCmN1TGTe7_c14T8pmayA3mgqyxgKd3_xKLTytHum2CcUKduH/plain%20light%20green%20fabric%20(Snowy%20Mint).jpg');
+            background-color: whitesmoke;
             background-size: cover;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -26,7 +26,7 @@
         }
         .dish-photos img {
             width: 360px;
-            height: 300px;
+            height: 320px;
             margin: 30px;
             border: 3px solid #ccc;
             border-radius: 15px;
@@ -45,6 +45,27 @@
             border-radius: 15px;
         }
     </style>
+
+    <script>
+    fetch('/api/food')
+        .then(response => response.json())
+        .then(data => {
+            const dishContainer = document.getElementById('dish-container');
+            data.forEach(dish => {
+                const img = document.createElement('img');
+                img.src = dish.image_url;
+                img.alt = dish.name;
+                img.style.width = '360px';
+                img.style.height = '320px';
+                img.style.margin = '30px';
+                img.style.border = '3px solid #ccc';
+                img.style.borderRadius = '15px';
+                dishContainer.appendChild(img);
+            });
+        })
+        .catch(error => console.error('Error fetching dishes:', error));
+</script>
+
 </head>
 <body>
     <h1>Welcome to Create Ur Own Dish</h1>
@@ -69,5 +90,13 @@
         <a href="/comments">comments</a>
 
     </div>
+
+
+   <div class="dish-photos" id="dish-container">
+</div>
+
 </body>
+
+
+
 </html>

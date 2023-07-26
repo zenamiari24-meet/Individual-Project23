@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-</form>
-
 <head>
     <meta charset="UTF-8">
+    <title>Feedback Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="comments"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
+
 <body>
     <form action="/comments" method="POST">
-    
-    <input type="comments" name= "comments"   maxlength="280">
-    <input type="submit"/>
-
+        <input type="comments" name="comments" maxlength="280">
+        <input type="submit" value="Submit Feedback">
+        
+    </form>
 </body>
+
 </html>
