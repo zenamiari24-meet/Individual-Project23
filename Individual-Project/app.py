@@ -71,9 +71,6 @@ def food():
     return render_template('food.html')
 
 
-@app.route('/cart')
-def cart():
-    return render_template('cart.html')
 
 
 @app.route('/fish')
@@ -91,26 +88,32 @@ def vege():
 def meat():
     return render_template('meat.html')
 
-@app.route('/comments', methods=['GET','POST'])
+
+
+@app.route('/comments', methods=['GET', 'POST'])
 def comments():
     if request.method == "POST":
-        comments = request.form['comments']
-        name = request.form['name']
+        comments = request.form["comments"]
         try:
-            UID = login_session['comments']['localId']
-            tweet = {"name": name,"comments": comments,"UID":UID}
-            db.child("comments").push(comments)
+            UID = login_session['user']['localId']
+            comment = {"comments": comments, "UID":UID}
+            db.child("comments").push(comment)
+            return redirect(url_for('all_comments'))
         except:
             error = "Authentication failed"
             return redirect(url_for('comments'))
-    return render_template('comments.html')
+    return render_template("comments.html")
 
 
+@app.route('/all_comments',methods=["GET","POST"])
+def all_comments():
+    comments=db.child("comments").get().val()
+    return render_template("all_comments.html", comments=comments)
 
 
  
 
 #Code goes above here
 
-if __name__ == '__main__':
+if __name__ == '__main__': 
     app.run(debug=True)

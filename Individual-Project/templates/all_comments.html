@@ -1,0 +1,13 @@
+<!doctype html>
+    <html>
+        <body>
+            <h1> Comment section!</h1>
+            <p> All the feedback you gave us: </p>
+            <ul>
+        {% for comment in comments %}
+       <img src="{{comment}}" alt="" />
+       <li> {{comments[comment]['comments']}}</li>
+           {% endfor %}
+            </ul>
+        </body>
+    </html>

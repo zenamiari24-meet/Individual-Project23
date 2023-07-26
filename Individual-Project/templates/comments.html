@@ -1,57 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+</form>
+
 <head>
     <meta charset="UTF-8">
-    <title>Comments</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-        }
-
-        input[type="name"],
-        input[type="comments"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            color: #333;
-        }
-
-        input[type="submit"] {
-            background-color: green;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #4CAF50; /* Darker green on hover */
-        }
-    </style>
 </head>
 <body>
     <form action="/comments" method="POST">
-        <div>
-            <input type="text" name="name" minlength="2" placeholder="Your Name">
-        </div>
-        <input type="text" name="comments" maxlength="280" placeholder="Your Comments">
-        <input type="submit" value="Submit">
-    </form>
+    
+    <input type="comments" name= "comments"   maxlength="280">
+    <input type="submit"/>
+
 </body>
 </html>
-

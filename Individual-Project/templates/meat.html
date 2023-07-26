@@ -4,66 +4,109 @@
     <title>Design Ur Dish - Products</title>
     <style>
         body {
+            background-color: white;
+            color: black;
             font-family: Arial, sans-serif;
-            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #009688;
+        }
+
+        center {
+            padding: 20px;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border: 2px solid #009688;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 300px;
         }
 
         .product-container {
-            display: inline-block;
-            width: 300px;
-            margin: 20px;
+            max-width: 300px;
             padding: 10px;
-            border: 1px solid #ddd;
+            margin: 20px;
+            border: 2px solid #009688;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
 
-        .product-image {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-            background-color: #f2f2f2;
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
         }
 
         .product-name {
+            font-size: 20px;
             font-weight: bold;
             margin-top: 10px;
         }
 
+        .product-description {
+            margin-top: 5px;
+        }
+
         .product-price {
-            font-size: 1.2em;
-            color: #009688;
+            font-size: 18px;
+            margin-top: 5px;
         }
 
         .add-to-cart-btn {
-            background-color: #4CAF50;
+            display: block;
+            background-color: #009688;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
             text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin-top: 10px;
-            cursor: pointer;
+            text-align: center;
+            padding: 10px;
             border-radius: 5px;
+            margin-top: 10px;
+            width: 100%;
         }
 
-        .search-bar {
+        .add-to-cart-btn:hover {
+            background-color: #00796b;
+        }
+
+        .other-pages {
+            text-align: center;
             margin-top: 30px;
-            width: 300px;
-            padding: 10px;
-            font-size: 16px;
+        }
+
+        .other-pages button {
+            background-color: #009688;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .other-pages button:hover {
+            background-color: #00796b;
         }
     </style>
 </head>
 <body>
     <center>
-    <h1>Welcome to the meat page</h1>
 
     <div class="search-bar">
         <input type="text" placeholder="Search products...">
     </div>
 </center>
 
+<form action="/cart" method="POST">
     <div class="product-container">
         <div class="product-image">
         <img src="https://hips.hearstapps.com/hmg-prod/images/grilled-chicken-horizontal-1532030541.jpg?crop=0.8890666666666666xw:1xh;center,top&resize=1200:*" width="200"  height="200">
@@ -71,9 +114,12 @@
         <div class="product-name">grilled chicken</div>
         <div class="product-description">Tender and succulent, our best grilled chicken is a true delight for your taste buds.</div>
         <div class="product-price">$20.00</div>
-        <button class="add-to-cart-btn">Add to Cart</button>
+        <button class="add-to-cart-btn"><a href="/cart"></a>Add to Cart</button>
     </div>
+</form>
 
+
+<form action="/cart" method="POST">
     <div class="product-container">
         <div class="product-image">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHppJ8cdhgi7iaLAavSgHeEdJKqrpa6581Aw&usqp=CAU" width="200"  height="200">
@@ -81,9 +127,11 @@
         <div class="product-name">grilled stake</div>
         <div class="product-description">Sink your teeth into the succulent and perfectly seasoned goodness of our best-grilled steak.</div>
         <div class="product-price">$15.00</div>
-        <button class="add-to-cart-btn">Add to Cart</button>
+        <button class="add-to-cart-btn"><a href="/cart"></a>Add to Cart</button>
     </div>
+</form>
 
+<form action="/cart" method="POST">
     <div class="product-container">
         <div class="product-image">
         <img src="https://assets.epicurious.com/photos/5c745a108918ee7ab68daf79/1:1/w_2560%2Cc_limit/Smashburger-recipe-120219.jpg" width="200"  height="200">
@@ -91,17 +139,17 @@
         <div class="product-name">Burger</div>
         <div class="product-description">Juicy and Succulent: Our best grilled burger is bursting with juicy flavors, making each bite an absolute delight.</div>
         <div class="product-price">$25.00</div>
-        <button class="add-to-cart-btn">Add to Cart</button>
+        <button class="add-to-cart-btn"><a href="/cart"></a>Add to Cart</button>
     </div>
+</form>
 
     <div class="other-pages">
-        <a href="fish">Fish</a>
+        <a href="/fish">Fish</a>
         <a href="/vege">Vega - Vege</a>
     </div>
 
         <div class="other-pages">
         <a href="/cart">Cart</a>
-        <a href="/comments">comments</a>
 
     <!-- Add more product containers as needed -->
 

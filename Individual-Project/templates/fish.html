@@ -1,109 +1,152 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Design Ur Dish - Products</title>
+    <title>Fish Page</title>
     <style>
         body {
+            background-color: white;
+            color: black;
             font-family: Arial, sans-serif;
-            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #009688;
+        }
+
+        center {
+            padding: 20px;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border: 2px solid #009688;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 300px;
         }
 
         .product-container {
-            display: inline-block;
-            width: 300px;
-            margin: 20px;
+            max-width: 300px;
             padding: 10px;
-            border: 1px solid #ddd;
+            margin: 20px;
+            border: 2px solid #009688;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
 
-        .product-image {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-            background-color: #f2f2f2;
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
         }
 
         .product-name {
+            font-size: 20px;
             font-weight: bold;
             margin-top: 10px;
         }
 
+        .product-description {
+            margin-top: 5px;
+        }
+
         .product-price {
-            font-size: 1.2em;
-            color: #009688;
+            font-size: 18px;
+            margin-top: 5px;
         }
 
         .add-to-cart-btn {
-            background-color: #4CAF50;
+            display: block;
+            background-color: #009688;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
             text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin-top: 10px;
-            cursor: pointer;
+            text-align: center;
+            padding: 10px;
             border-radius: 5px;
+            margin-top: 10px;
+            width: 100%;
         }
 
-        .search-bar {
+        .add-to-cart-btn:hover {
+            background-color: #00796b;
+        }
+
+        .other-pages {
+            text-align: center;
             margin-top: 30px;
-            width: 300px;
-            padding: 10px;
-            font-size: 16px;
+        }
+
+        .other-pages button {
+            background-color: #009688;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .other-pages button:hover {
+            background-color: #00796b;
         }
     </style>
 </head>
 <body>
     <center>
-    <h1>Welcome to fish page</h1>
 
-    <div class="search-bar">
-        <input type="text" placeholder="Search products...">
-    </div>
-</center>
-
-    <div class="product-container">
-        <div class="product-image">
-        <img src="https://thebigmansworld.com/wp-content/uploads/2023/01/seafood-pasta-recipe.jpg" width="200"  height="200">
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
         </div>
-        <div class="product-name">Seafood Pasea</div>
-        <div class="product-description">Experience the essence of coastal cuisine with our Seafood Aglio e Olio, featuring a tantalizing blend of shrimp, clams, and fresh herbs.</div>
-        <div class="product-price">$25.00</div>
-        <button class="add-to-cart-btn">Add to Cart</button>
-    </div>
+    </center>
 
-    <div class="product-container">
-        <div class="product-image"> 
-        <img src="https://t3.ftcdn.net/jpg/03/32/16/52/360_F_332165231_B81gcGf8AMRKMB0MjZZnqWMLbaF2JaVL.jpg" width="200"  height="200">
+    <form action="/cart" method="POST">
+        <div class="product-container">
+            <div class="product-image">
+                <img src="https://thebigmansworld.com/wp-content/uploads/2023/01/seafood-pasta-recipe.jpg" width="200" height="200">
+            </div>
+            <div class="product-name">Seafood Pasta</div>
+            <div class="product-description">Experience the essence of coastal cuisine with our Seafood Aglio e Olio, featuring a tantalizing blend of shrimp, clams, and fresh herbs.</div>
+            <div class="product-price">$25.00</div>
+            <input type= "hidden"  name = "S">
+            <button class="add-to-cart-btn" href="/cart">Add to Cart</button>
         </div>
-        <div class="product-name">Best sushi</div>
-        <div class="product-description">Melt-in-your-mouth perfection: Our best sushi that effortlessly dissolve on your palate, leaving you craving for more. You need to try it</div>
-        <div class="product-price">$18.00</div>
-        <button class="add-to-cart-btn">Add to Cart</button>
-    </div>
+    </form>
 
-    <div class="product-container">
-        <div class="product-image">
-        <img src="https://static01.nyt.com/images/2020/12/23/dining/18kwanzarex1-grilled-fish/merlin_181220949_f7d795fc-ae3f-4c0b-91d6-03c4f51a2207-threeByTwoMediumAt2X.jpg" width="200"  height="200">
+    <form action="/cart" method="POST">
+        <div class="product-container">
+            <div class="product-image"> 
+                <img src="https://t3.ftcdn.net/jpg/03/32/16/52/360_F_332165231_B81gcGf8AMRKMB0MjZZnqWMLbaF2JaVL.jpg" width="200" height="200">
+            </div>
+            <div class="product-name">Best Sushi</div>
+            <div class="product-description">Melt-in-your-mouth perfection: Our best sushi that effortlessly dissolves on your palate, leaving you craving for more. You need to try it</div>
+            <div class="product-price">$18.00</div>
+            <button class="add-to-cart-btn" href="/cart">Add to Cart</button>
         </div>
-        <div class="product-name">Grilled fish</div>
-        <div class="product-description">Succulent and tender grilled fish with a smoky flavor that melts in your mouth.A mouthwatering grilled fish dish that's perfectly seasoned.</div>
-        <div class="product-price">$30.00</div>
-        <button class="add-to-cart-btn">Add to Cart</button>
+    </form>
+
+    <form action="/cart" method="POST">
+        <div class="product-container">
+            <div class="product-image">
+                <img src="https://static01.nyt.com/images/2020/12/23/dining/18kwanzarex1-grilled-fish/merlin_181220949_f7d795fc-ae3f-4c0b-91d6-03c4f51a2207-threeByTwoMediumAt2X.jpg" width="200" height="200">
+            </div>
+            <div class="product-name">Grilled Fish</div>
+            <div class="product-description">Succulent and tender grilled fish with a smoky flavor that melts in your mouth. A mouthwatering grilled fish dish that's perfectly seasoned.</div>
+            <div class="product-price">$30.00</div>
+            <button class="add-to-cart-btn" href="/cart">Add to Cart</button>
+        </div>
+    </form>
+
+    <div class="other-pages">
+        <button><a href="/meat">Meat</a></button>
+        <button><a href="/vege">Vege - Vegetables</a></button>
+        <button><a href="/cart">Cart</a></button>
     </div>
-
-    <div class="other-pages"></div>
-      <div>  <a href="/meat">Meat</a></div>
-      <div>  <a href="/vege">Vega - Vege</a>
-    </div>
-
-        <div class="other-pages">
-        <a href="/cart">Cart</a></div>
-        <div><a href="/comments">comments</a></div>
-
-    <!-- Add more product containers as needed -->
-
 </body>
 </html>
