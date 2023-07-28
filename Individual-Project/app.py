@@ -129,7 +129,7 @@ def get_food_dishes():
             "image_url": "https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/09/healthy-eating-food-sweet-potato-kale-bowl-grain-vegan-1296x728-header.jpg?w=1155&h=1528"
         }
     ]
-    return jsonify("home")
+    return jsonify("home.html")
 
  
 
